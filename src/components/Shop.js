@@ -17,6 +17,7 @@ export default function Shop() {
     })
       .then((res) => res.json())
       .then((data) => setGoods(data.featured));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
