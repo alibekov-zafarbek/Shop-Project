@@ -1,14 +1,15 @@
-import React from "react";
+import {useContext} from "react";
+import { ShopContext } from "../context";
 
-export default function BasketItem({
-  id,
-  name,
-  price,
-  quantity,
-  removeFromBasket,
-  incrementQuantity,
-  decrementQuantity,
-}) {
+export default function BasketItem(props) {
+  const {
+    id,
+    name,
+    price,
+    quantity,
+  } = props
+  const {incrementQuantity, decrementQuantity, removeFromBasket } = useContext(ShopContext)
+
   return (
     <div className="bsk">
       <li className="collection-item">

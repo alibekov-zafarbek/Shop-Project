@@ -1,6 +1,9 @@
-import React from 'react'
+import { useContext} from 'react'
+import { ShopContext } from '../context'
 
-export default function GoodItem({ id, name, description, price, full_background, click }) {
+export default function GoodItem({ id, name, description, price, full_background,  }) {
+
+  const { addToBasket } = useContext(ShopContext)
   return (
     <div className='card' >
       <div className='card-image'>
@@ -11,7 +14,7 @@ export default function GoodItem({ id, name, description, price, full_background
         <p>{description}</p>
       </div>
       <div className='card-action'>
-        <button className='btn' onClick={() => click({id, name, price})}>Buy</button>  
+        <button className='btn' onClick={() => addToBasket({id, name, price})}>Buy</button>  
         <span className='right'>{price}$</span>
       </div>
 
